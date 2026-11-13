@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abi & Caro turn 30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --pink:#4FA52E; --lemon:#D4FA8C; --matcha:#8DBB5A; --forest:#2F5D2A;
+  --glow:#E6FFB3; --paper:#ffffff; --ink:#24401F; --shade:#A9DE5E;
+  --card:#ffffff; --numeral:#E6FFB3; --numeral-edge:#2F5D2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.55;
+}
+h1,h2,.display{font-family:"Baloo 2","Trebuchet MS","Arial Rounded MT Bold",sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius:8px}
+
+/* ---------- hero: a pink wall and a lemon floor ---------- */
+.hero{
+  position:relative;overflow:hidden;text-align:center;
+  background:linear-gradient(var(--pink) 0 68%,var(--lemon) 68% 100%);
+  padding:0 1rem 2.5rem;
+}
+.bunting{display:block;width:min(100%,34rem);margin:0 auto;height:auto}
+.bunting .string{fill:none;stroke:var(--forest);stroke-width:3;stroke-linecap:round}
+.bunting .flag{fill:var(--glow)}
+.bunting text{font-family:"Baloo 2","Trebuchet MS",sans-serif;font-weight:800;font-size:15px;fill:var(--forest);text-anchor:middle}
+
+.names{font-size:clamp(2.6rem,13vw,5rem);font-weight:800;color:var(--paper);margin-top:.75rem;letter-spacing:-.01em}
+.sub{font-family:"Baloo 2",sans-serif;font-weight:500;font-size:clamp(1.15rem,5vw,1.6rem);color:var(--paper);margin:.1rem 0 0}
+
+.thirty{position:relative;display:inline-flex;gap:.04em;margin-top:.5rem;
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:clamp(9rem,52vw,17rem);line-height:.82;
+  color:var(--numeral);-webkit-text-stroke:5px var(--numeral-edge);paint-order:stroke fill;
+  filter:drop-shadow(0 0 18px rgba(200,255,120,.95)) drop-shadow(0 0 40px rgba(170,255,90,.6));
+}
+.thirty span{position:relative;display:inline-block;transform-origin:50% 100%}
+.thirty span:first-child{transform:rotate(-4deg)}
+.thirty span:last-child{transform:rotate(4deg)}
+/* a candle on each numeral: one per twin */
+.thirty span::before{content:"";position:absolute;left:50%;top:-.08em;width:.06em;height:.16em;margin-left:-.03em;
+  background:var(--matcha);border:3px solid var(--numeral-edge);border-radius:.03em}
+.thirty span::after{content:"";position:absolute;left:50%;top:-.2em;width:.07em;height:.1em;margin-left:-.035em;
+  background:#C8FF5A;border-radius:50% 50% 50% 50%/65% 65% 35% 35%;animation:flick 1.6s ease-in-out infinite}
+@keyframes flick{0%,100%{transform:scale(1) rotate(-3deg)}50%{transform:scale(1.15,.9) rotate(4deg)}}
+.floor-shadow{width:min(70%,22rem);height:1.1rem;margin:.6rem auto 0;border-radius:50%;background:var(--shade)}
+
+.confetti{position:absolute;inset:0;pointer-events:none}
+.confetti i{position:absolute;width:.6rem;height:.6rem;border-radius:50%;background:var(--glow);opacity:.9}
+.confetti i:nth-child(odd){background:var(--lemon);border-radius:2px;transform:rotate(25deg)}
+.confetti i:nth-child(3n){background:var(--matcha)}
+
+/* ---------- content ---------- */
+main{max-width:36rem;margin:0 auto;padding:2rem 1.25rem 3rem}
+.lede{font-size:1.2rem;text-align:center;margin:0 0 2rem}
+.lede strong{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.5rem;display:block;margin-bottom:.4rem;color:var(--forest);line-height:1.2}
+
+.count{display:flex;justify-content:center;gap:.6rem;margin:0 0 2rem;padding:0;list-style:none}
+.count li{flex:1;max-width:6rem;background:var(--glow);border:3px solid var(--forest);border-radius:1.4rem 1.4rem 1.4rem .4rem;padding:.7rem .2rem .5rem;text-align:center}
+.count b{display:block;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:2rem;line-height:1;color:var(--forest);font-variant-numeric:tabular-nums}
+.count span{font-size:.85rem;font-weight:700}
+.count-done{text-align:center;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.6rem;color:var(--forest);margin:0 0 2rem}
+
+.details{background:var(--card);border:3px solid var(--forest);border-radius:1.75rem;padding:1.5rem 1.25rem;margin-bottom:2rem;box-shadow:.4rem .4rem 0 var(--matcha)}
+.details h2{font-size:1.7rem;font-weight:800;color:var(--forest);margin-bottom:1rem}
+.details dl{margin:0;display:grid;gap:1rem}
+.details dt{font-weight:700;font-size:.95rem;color:var(--matcha);filter:brightness(.78)}
+.details dd{margin:0;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.35rem;line-height:1.25}
+.details dd small{display:block;font-family:"Nunito",sans-serif;font-weight:400;font-size:1rem;line-height:1.5}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
+.btn{flex:1 1 12rem;text-align:center;text-decoration:none;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.15rem;
+  padding:.75rem 1rem;border-radius:999px;border:3px solid var(--forest);background:var(--pink);color:#fff}
+.btn.alt{background:transparent;color:var(--forest)}
+.btn:active{transform:translateY(2px)}
+
+.note{text-align:center;margin:0}
+.sign{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.6rem;color:var(--forest);text-align:center;margin:.6rem 0 0}
+footer{text-align:center;font-size:.9rem;padding:0 1rem 2rem;opacity:.75}
+main{overflow-x:clip}
+.deco{display:flex;justify-content:space-between;align-items:center;margin:0 0 2rem;padding:0 .25rem}
+.deco.wide{justify-content:space-around}
+.float{width:var(--w,4.5rem);height:var(--w,4.5rem);flex:none;will-change:transform;filter:drop-shadow(0 0 10px rgba(170,255,90,.8))}
+.float *{stroke:#2F5D2A;stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.float .ns{stroke:none}
+@media (prefers-reduced-motion:reduce){.thirty span::after{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="confetti" aria-hidden="true">
+    <i style="left:7%;top:30%"></i><i style="left:16%;top:47%"></i><i style="left:88%;top:27%"></i>
+    <i style="left:80%;top:44%"></i><i style="left:93%;top:56%"></i><i style="left:4%;top:60%"></i>
+    <i style="left:26%;top:24%"></i><i style="left:71%;top:22%"></i>
+  </div>
+
+  <svg class="bunting" viewBox="0 0 400 86" role="img" aria-label="Bunting that spells Abi and Caro">
+    <path class="string" d="M4 8 Q200 62 396 8"/>
+    <g>
+      <path class="flag" d="M16 14 l36 0 -18 38z"/><text x="34" y="33">A</text>
+      <path class="flag" d="M63 23 l36 0 -18 38z"/><text x="81" y="42">B</text>
+      <path class="flag" d="M110 30 l36 0 -18 38z"/><text x="128" y="49">I</text>
+      <path class="flag" d="M157 33 l36 0 -18 38z"/><text x="175" y="52">&amp;</text>
+      <path class="flag" d="M207 33 l36 0 -18 38z"/><text x="225" y="52">C</text>
+      <path class="flag" d="M254 30 l36 0 -18 38z"/><text x="272" y="49">A</text>
+      <path class="flag" d="M301 23 l36 0 -18 38z"/><text x="319" y="42">R</text>
+      <path class="flag" d="M348 14 l36 0 -18 38z"/><text x="366" y="33">O</text>
+    </g>
+  </svg>
+
+  <h1 class="names">Abi & Caro</h1>
+  <p class="sub">are turning</p>
+  <div class="thirty" aria-label="30"><span>3</span><span>0</span></div>
+  <div class="floor-shadow" aria-hidden="true"></div>
+</header>
+
+<main>
+  <p class="lede">
+    <strong>Twin sisters. One big birthday. A brand-new decade.</strong>
+    We’re so happy to invite you to join us on a very important day. Thirty is a breakthrough in our lives, and we want to remember this one for all the years ahead, with you there.
+  </p>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="balloon" viewBox="0 0 60 112"><ellipse cx="30" cy="35" rx="26" ry="32" fill="#8DDB4F"/><ellipse class="ns" cx="20" cy="22" rx="6" ry="9" fill="#fff" opacity=".6"/><path d="M26 72 l4 -5 4 5z" fill="#4FA52E"/><path d="M30 72 q-8 10 0 19 q7 8 -2 18" fill="none"/></symbol>
+    <symbol id="gift" viewBox="0 0 80 82"><rect x="10" y="36" width="60" height="42" rx="4" fill="#D4FA8C"/><rect x="5" y="25" width="70" height="15" rx="4" fill="#8DDB4F"/><rect x="34" y="25" width="12" height="53" fill="#4FA52E"/><path d="M40 24 q-20 -22 -24 -8 q-2 10 24 8z M40 24 q20 -22 24 -8 q2 10 -24 8z" fill="#4FA52E"/></symbol>
+    <symbol id="cake" viewBox="0 0 100 92"><ellipse cx="50" cy="81" rx="46" ry="8" fill="#fff"/><rect x="16" y="46" width="68" height="33" rx="6" fill="#E6FFB3"/><path d="M16 52 q0 -10 10 -10 h48 q10 0 10 10 v4 q-6 9 -11 0 q-6 9 -12 0 q-6 9 -12 0 q-5 9 -11 0 q-5 9 -11 0 q-5 8 -11 0z" fill="#4FA52E"/><rect x="33" y="24" width="5" height="18" fill="#8DDB4F"/><rect x="48" y="24" width="5" height="18" fill="#8DDB4F"/><rect x="63" y="24" width="5" height="18" fill="#8DDB4F"/><ellipse cx="35.5" cy="15" rx="4" ry="6" fill="#C8FF5A"/><ellipse cx="50.5" cy="15" rx="4" ry="6" fill="#C8FF5A"/><ellipse cx="65.5" cy="15" rx="4" ry="6" fill="#C8FF5A"/></symbol>
+    <symbol id="hat" viewBox="0 0 70 92"><path d="M35 14 L62 80 Q35 92 8 80Z" fill="#8DDB4F"/><path d="M27 36 L45 41 M20 56 L53 63" style="stroke:#fff;stroke-width:6" fill="none"/><circle cx="35" cy="11" r="8" fill="#E6FFB3"/></symbol>
+  </defs></svg>
+
+  <div class="deco" aria-hidden="true">
+    <svg class="float" style="--w:4.75rem" data-x="-40" data-y="-70" data-r="-18"><use href="#balloon"/></svg>
+    <svg class="float" style="--w:3.5rem" data-x="0" data-y="50" data-r="30"><use href="#hat"/></svg>
+    <svg class="float" style="--w:4.75rem" data-x="40" data-y="-90" data-r="16"><use href="#balloon"/></svg>
+  </div>
+
+  <ul class="count" id="count" aria-label="Countdown to the party">
+    <li><b id="d">–</b><span>days</span></li>
+    <li><b id="h">–</b><span>hours</span></li>
+    <li><b id="m">–</b><span>minutes</span></li>
+  </ul>
+
+  <div class="deco wide" aria-hidden="true">
+    <svg class="float" style="--w:5.5rem" data-x="-60" data-y="20" data-r="-10"><use href="#cake"/></svg>
+    <svg class="float" style="--w:5.5rem" data-x="60" data-y="-20" data-r="10"><use href="#cake"/></svg>
+  </div>
+
+  <section class="details" aria-labelledby="dh">
+    <h2 id="dh">The party</h2>
+    <dl>
+      <div><dt>When</dt><dd>Saturday, November 21, 2026<small>The party starts at 6:00 PM. It’s our true birthday, on the actual day.</small></dd></div>
+      <div><dt>Where</dt><dd>Hotel SOMA<small>454 Cleveland Ave, Fort Worth, TX 76104<br>Friends and family, meet us at the hotel.</small></dd></div>
+    </dl>
+    <div class="btns">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hotel+SOMA+454+Cleveland+Ave+Fort+Worth+TX+76104" target="_blank" rel="noopener">Get directions</a>
+      <a class="btn alt" href="https://hotelsomatx.com/" target="_blank" rel="noopener">See Hotel SOMA</a>
+    </div>
+  </section>
+
+  <section class="details" aria-labelledby="bh">
+    <h2 id="bh">What to bring</h2>
+    <dl>
+      <div><dt>On us</dt><dd>Pizza and cake<small>We’ll provide both, so come hungry.</small></dd></div>
+      <div><dt>From you</dt><dd>One item to share<small>We kindly ask each guest to bring one food item for everyone to enjoy.</small></dd></div>
+      <div><dt>Drinks</dt><dd>Bring your own<small>Don’t forget your drinks. Alcohol or anything else you like is welcome.</small></dd></div>
+    </dl>
+    <p style="margin:1.25rem 0 0">It’s going to be a long night, and we’re grateful you’ll be spending it with us. Thank you kindly!</p>
+  </section>
+
+  <div class="deco" aria-hidden="true">
+    <svg class="float" style="--w:4.25rem" data-x="-50" data-y="40" data-r="-24"><use href="#gift"/></svg>
+    <svg class="float" style="--w:3.5rem" data-x="0" data-y="-60" data-r="-30"><use href="#hat"/></svg>
+    <svg class="float" style="--w:4.25rem" data-x="50" data-y="60" data-r="24"><use href="#gift"/></svg>
+  </div>
+
+  <p class="note">Come celebrate with us. It won’t be the same without you.</p>
+  <p class="sign">Abi & Caro</p>
+</main>
+
+<footer>See you at 6!</footer>
+
+<script>
+(function(){
+  var party = new Date(2026, 10, 21, 18, 0, 0);
+  var box = document.getElementById('count');
+  function tick(){
+    var now = new Date(), diff = party - now;
+    if (diff <= 0){
+      var p = document.createElement('p');
+      p.className = 'count-done';
+      var sameDay = now.getFullYear()===2026 && now.getMonth()===10 && now.getDate()===21;
+      p.textContent = sameDay ? 'Today’s the day!' : 'Thank you for celebrating with us!';
+      box.replaceWith(p);
+      clearInterval(timer);
+      return;
+    }
+    var mins = Math.floor(diff/60000);
+    document.getElementById('d').textContent = Math.floor(mins/1440);
+    document.getElementById('h').textContent = Math.floor(mins%1440/60);
+    document.getElementById('m').textContent = mins%60;
+  }
+  var timer = setInterval(tick, 30000);
+  tick();
+})();
+</script>
+<script>
+(function(){
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var items = [].slice.call(document.querySelectorAll('.float')), queued = false;
+  function move(){
+    queued = false;
+    var vh = window.innerHeight || 1;
+    items.forEach(function(el){
+      var r = el.parentNode.getBoundingClientRect();
+      var p = (r.top + r.height/2 - vh/2) / vh;
+      if (p < -1) p = -1; if (p > 1) p = 1;
+      el.style.transform = 'translate(' + (p*el.dataset.x) + 'px,' + (p*el.dataset.y) + 'px) rotate(' + (p*el.dataset.r) + 'deg)';
+    });
+  }
+  function onScroll(){ if (!queued){ queued = true; requestAnimationFrame(move); } }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  move();
+})();
+</script>
+</body>
+</html>
