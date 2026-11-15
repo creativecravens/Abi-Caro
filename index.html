@@ -62,6 +62,33 @@ a:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius
 .confetti i:nth-child(odd){background:var(--lemon);border-radius:2px;transform:rotate(25deg)}
 .confetti i:nth-child(3n){background:var(--matcha)}
 
+/* ---------- the guest pass: register to get in ---------- */
+.pass{position:relative;background:var(--glow);border:3px solid var(--forest);border-radius:1.75rem;
+  margin-bottom:2rem;box-shadow:.4rem .4rem 0 var(--pink);overflow:hidden}
+.pass-body{padding:1.5rem 1.25rem 1.5rem}
+.pass-kicker{margin:0 0 .3rem;font-weight:700;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--matcha);filter:brightness(.72)}
+.pass h2{font-size:1.7rem;font-weight:800;color:var(--forest);margin-bottom:.6rem}
+.pass p{margin:0}
+.pass-steps{margin:1.2rem 0 0;padding:0;list-style:none;display:grid;gap:.75rem;counter-reset:step}
+.pass-steps li{counter-increment:step;display:flex;gap:.7rem;align-items:flex-start;font-weight:600}
+.pass-steps li::before{content:counter(step);flex:none;width:1.9rem;height:1.9rem;border-radius:50%;
+  border:3px solid var(--forest);background:var(--paper);color:var(--forest);
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.05rem;display:grid;place-items:center}
+.pass-btn{display:block;margin:1.5rem 0 0;font-size:1.25rem}
+.pass-fine{margin-top:.9rem;font-size:.92rem}
+.pass-tear{position:relative;height:0;margin:0 1rem;border-top:3px dashed var(--forest)}
+.pass-tear::before,.pass-tear::after{content:"";position:absolute;top:-.875rem;width:1.7rem;height:1.7rem;
+  border-radius:50%;background:var(--paper);border:3px solid var(--forest)}
+.pass-tear::before{left:-1.85rem}
+.pass-tear::after{right:-1.85rem}
+.pass-stub{display:flex;justify-content:center;align-items:center;gap:.75rem;padding:1.05rem 1rem 1.15rem;
+  font-family:"Baloo 2",sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--forest)}
+.pass-stub b{font-size:1.5rem;letter-spacing:0;line-height:1}
+.pass-stub i{flex:none;width:.5rem;height:.5rem;border-radius:50%;background:var(--matcha)}
+.note a{font-weight:700;color:var(--forest)}
+
 /* ---------- content ---------- */
 main{max-width:36rem;margin:0 auto;padding:2rem 1.25rem 3rem}
 .lede{font-size:1.2rem;text-align:center;margin:0 0 2rem}
@@ -169,6 +196,26 @@ main{overflow-x:clip}
     </div>
   </section>
 
+
+  <section class="pass" id="register" aria-labelledby="rh">
+    <div class="pass-body">
+      <p class="pass-kicker">Hotel SOMA guest list</p>
+      <h2 id="rh">Register before you come</h2>
+      <p>The hotel keeps a guest list, so every visitor signs in ahead of time. If you are coming to the party, this part is not optional, and we would hate to lose you at the door.</p>
+      <ol class="pass-steps">
+        <li>Tap the button and fill out the hotel&rsquo;s registration form.</li>
+        <li>One form per guest. Bringing someone with you? They register too.</li>
+        <li>Then just show up on the 21st at 6:00 PM. We&rsquo;ll handle the cake.</li>
+      </ol>
+      <a class="btn pass-btn" href="https://www.cognitoforms.com/Sidecar2/GuestRegistrationFormHotelSOMA" target="_blank" rel="noopener">Register for the party</a>
+      <p class="pass-fine">It takes about a minute. Sooner is better than the night before.</p>
+    </div>
+    <div class="pass-tear" aria-hidden="true"></div>
+    <div class="pass-stub" aria-hidden="true">
+      <span>Admit one</span><i></i><b>30</b><i></i><span>Nov 21</span>
+    </div>
+  </section>
+
   <section class="details" aria-labelledby="bh">
     <h2 id="bh">What to bring</h2>
     <dl>
@@ -185,7 +232,8 @@ main{overflow-x:clip}
     <svg class="float" style="--w:4.25rem" data-x="50" data-y="60" data-r="24"><use href="#gift"/></svg>
   </div>
 
-  <p class="note">Come celebrate with us. It won’t be the same without you.</p>
+  <p class="note">Come celebrate with us. It won’t be the same without you.<br>
+    <a href="#register">And please don’t forget to register.</a></p>
   <p class="sign">Abi & Caro</p>
 </main>
 
