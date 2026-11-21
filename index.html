@@ -27,6 +27,16 @@ h1,h2,.display{font-family:"Baloo 2","Trebuchet MS","Arial Rounded MT Bold",sans
 a{color:inherit}
 a:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius:8px}
 
+/* ---------- time-change update banner ---------- */
+.update{background:var(--forest);color:var(--glow);text-align:center;padding:1.1rem 1rem 1.25rem;
+  border-bottom:5px solid var(--lemon)}
+.update p{margin:0}
+.update-kicker{display:inline-block;font-weight:800;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--lemon);color:var(--forest);padding:.2rem .7rem;border-radius:999px;margin-bottom:.45rem}
+.update-time{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:clamp(2rem,10vw,3rem);line-height:1.05;color:#fff}
+.update-msg{font-weight:700;font-size:1.05rem;margin-top:.35rem}
+.update-old{font-size:.9rem;opacity:.85;margin-top:.2rem}
+
 /* ---------- hero: a pink wall and a lemon floor ---------- */
 .hero{
   position:relative;overflow:hidden;text-align:center;
@@ -126,6 +136,13 @@ main{overflow-x:clip}
 </head>
 <body>
 
+<div class="update" role="status">
+  <p class="update-kicker">New update</p>
+  <p class="update-time">New time: 7:00 PM</p>
+  <p class="update-msg">Everyone please be at Hotel SOMA by 7 PM on Saturday, November 21.</p>
+  <p class="update-old">The party time changed from 6:00 PM to 7:00 PM.</p>
+</div>
+
 <header class="hero">
   <div class="confetti" aria-hidden="true">
     <i style="left:7%;top:30%"></i><i style="left:16%;top:47%"></i><i style="left:88%;top:27%"></i>
@@ -186,7 +203,7 @@ main{overflow-x:clip}
   <section class="details" aria-labelledby="dh">
     <h2 id="dh">The party</h2>
     <dl>
-      <div><dt>When</dt><dd>Saturday, November 21, 2026<small>The party starts at 6:00 PM. It’s our true birthday, on the actual day.</small></dd></div>
+      <div><dt>When</dt><dd>Saturday, November 21, 2026<small>New time: the party starts at 7:00 PM, so please be there by 7. It’s our true birthday, on the actual day.</small></dd></div>
       <div><dt>Where</dt><dd>Hotel SOMA<small><a href="https://www.google.com/maps/dir/?api=1&destination=Hotel+SOMA%2C+454+Cleveland+Ave%2C+Fort+Worth%2C+TX+76104" target="_blank" rel="noopener">454 Cleveland Ave, Fort Worth, TX 76104</a><br>Friends and family, meet us at the hotel.</small></dd></div>
     </dl>
     <div class="btns">
@@ -205,7 +222,7 @@ main{overflow-x:clip}
       <ol class="pass-steps">
         <li>Tap the button and fill out the hotel&rsquo;s registration form.</li>
         <li>One form per guest. Bringing someone with you? They register too.</li>
-        <li>Then just show up on the 21st at 6:00 PM. We&rsquo;ll handle the cake.</li>
+        <li>Then just show up on the 21st at 7:00 PM. We&rsquo;ll handle the cake.</li>
       </ol>
       <a class="btn pass-btn" href="https://www.cognitoforms.com/Sidecar2/GuestRegistrationFormHotelSOMA" target="_blank" rel="noopener">Register for the party</a>
       <p class="pass-fine">It takes about a minute. Sooner is better than the night before.</p>
@@ -237,11 +254,11 @@ main{overflow-x:clip}
   <p class="sign">Abi & Caro</p>
 </main>
 
-<footer>See you at 6!</footer>
+<footer>See you at 7!</footer>
 
 <script>
 (function(){
-  var party = new Date(2026, 10, 21, 18, 0, 0);
+  var party = new Date(2026, 10, 21, 19, 0, 0);
   var box = document.getElementById('count');
   function tick(){
     var now = new Date(), diff = party - now;
